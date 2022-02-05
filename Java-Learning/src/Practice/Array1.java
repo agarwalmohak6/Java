@@ -1,4 +1,3 @@
-package Practice;
 /*
 Mr Raman is having two unsorted arrays with names myarr1 and myarr2. They can be of any size.
         They may contain duplicate values also. Raman wants for each element in myarr1[ ] to count elements
@@ -10,6 +9,7 @@ Mr Raman is having two unsorted arrays with names myarr1 and myarr2. They can be
         Output :
         1,0,5,2,2
 */
+package Practice;
 
 import java.util.Scanner;
 public class Array1 {
