@@ -42,20 +42,29 @@ public class Stack1 {
         Stack<Character> stack=new Stack<>();
         Scanner sc=new Scanner(System.in);
         String s=sc.next();
-        for(int i=0;i<s.length();i++){
-            if(s.charAt(i)=='(' || s.charAt(i)=='{' || s.charAt(i)=='[')
+        boolean found=true;
+        for(int i=0;i<s.length();i++) {
+            if (s.charAt(i) == '(' || s.charAt(i) == '{' || s.charAt(i) == '[')
                 stack.push(s.charAt(i));
-            else if(s.charAt(i)==')' && stack.peek()=='('){
-                stack.pop();
-                }
-            else if(s.charAt(i)=='}' && stack.peek()=='{'){
-                stack.pop();
+            if (stack.isEmpty() ||( stack.isEmpty() && i != s.length() - 1)) {
+                found = false;
+                break;
+            } else {
+                if (s.charAt(i) == ')' && stack.peek() == '(')
+                    stack.pop();
+                else if (s.charAt(i) == ')' && stack.peek() != '(')
+                    stack.push(s.charAt(i));
+                else if (s.charAt(i) == '}' && stack.peek() == '{')
+                    stack.pop();
+                else if (s.charAt(i) == '}' && stack.peek() != '{')
+                    stack.push(s.charAt(i));
+                else if (s.charAt(i) == ']' && stack.peek() == '[')
+                    stack.pop();
+                else if (s.charAt(i) == ']' && stack.peek() != '[')
+                    stack.push(s.charAt(i));
             }
-            else if(s.charAt(i)=='}' && stack.peek()=='['){
-                stack.pop();
-            }
-            }
-        if(stack.isEmpty())
+        }
+        if(stack.isEmpty() && found)
             System.out.println("true");
         else
             System.out.println("false");
