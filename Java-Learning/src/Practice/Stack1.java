@@ -36,7 +36,6 @@ package Practice;
 
 import java.util.Scanner;
 import java.util.Stack;
-
 public class Stack1 {
     public static void main(String[] args) {
         Stack<Character> stack=new Stack<>();
@@ -46,21 +45,15 @@ public class Stack1 {
         for(int i=0;i<s.length();i++) {
             if (s.charAt(i) == '(' || s.charAt(i) == '{' || s.charAt(i) == '[')
                 stack.push(s.charAt(i));
-            if (stack.isEmpty() ||( stack.isEmpty() && i != s.length() - 1)) {
+            if (stack.isEmpty() || (stack.isEmpty() && i != s.length() - 1)) {
                 found = false;
                 break;
             } else {
-                if (s.charAt(i) == ')' && stack.peek() == '(')
+                if ((s.charAt(i) == ')' && stack.peek() == '(') || (s.charAt(i) == '}' && stack.peek() == '{') ||
+                        (s.charAt(i) == ']' && stack.peek() == '['))
                     stack.pop();
-                else if (s.charAt(i) == ')' && stack.peek() != '(')
-                    stack.push(s.charAt(i));
-                else if (s.charAt(i) == '}' && stack.peek() == '{')
-                    stack.pop();
-                else if (s.charAt(i) == '}' && stack.peek() != '{')
-                    stack.push(s.charAt(i));
-                else if (s.charAt(i) == ']' && stack.peek() == '[')
-                    stack.pop();
-                else if (s.charAt(i) == ']' && stack.peek() != '[')
+                else if ((s.charAt(i) == ')' && stack.peek() != '(') || (s.charAt(i) == '}' && stack.peek() != '{') ||
+                        (s.charAt(i) == ']' && stack.peek() != '['))
                     stack.push(s.charAt(i));
             }
         }
