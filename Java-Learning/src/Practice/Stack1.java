@@ -45,7 +45,7 @@ public class Stack1 {
         for(int i=0;i<s.length();i++) {
             if (s.charAt(i) == '(' || s.charAt(i) == '{' || s.charAt(i) == '[')
                 stack.push(s.charAt(i));
-            if (stack.isEmpty() || (stack.isEmpty() && i != s.length() - 1)) {
+            if (stack.isEmpty()) {
                 found = false;
                 break;
             }
