@@ -48,7 +48,8 @@ public class Stack1 {
             if (stack.isEmpty() || (stack.isEmpty() && i != s.length() - 1)) {
                 found = false;
                 break;
-            } else {
+            }
+            else {
                 if ((s.charAt(i) == ')' && stack.peek() == '(') || (s.charAt(i) == '}' && stack.peek() == '{') ||
                         (s.charAt(i) == ']' && stack.peek() == '['))
                     stack.pop();
