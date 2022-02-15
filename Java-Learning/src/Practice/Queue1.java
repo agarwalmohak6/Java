@@ -14,7 +14,7 @@ public class Queue1 {
     }
 
     public boolean isempty() {
-        if (front == null && rear == null)
+        if (front == null)
             return true;
         return false;
     }
