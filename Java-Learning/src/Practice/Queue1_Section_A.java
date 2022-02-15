@@ -50,9 +50,9 @@ public class Queue1_Section_A {
                 mid=ans.length/2+1;
             ans[0]=args[l].charAt(mid);
             int c=1;
-            for(int i=args[l].length()-1;i>mid;i--)
-                ans[c++]=args[l].charAt(i);
             for(int i=0;i<mid;i++)
+                ans[c++]=args[l].charAt(i);
+            for(int i=args[l].length()-1;i>mid;i--)
                 ans[c++]=args[l].charAt(i);
             String s = "";
             for (char a : ans) {
