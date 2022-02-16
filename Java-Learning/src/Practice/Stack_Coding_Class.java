@@ -4,7 +4,7 @@ package Practice;
 
 import java.util.*;
 
-public class test {
+public class Stack_Coding_Class {
     public static void main(String[] args) {
         Stack<String> st=new Stack<>();
         Scanner sc=new Scanner (System.in);
