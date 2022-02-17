@@ -15,8 +15,8 @@ public class Queue2 {
         for(int i=0;i<args.length;i++){
             int s=0;
             int p=1;
-            for(int j=1;j<=args[i].length();j++){
-                int n=Character.getNumericValue(args[i].charAt(j-1));
+            for(int j=0;j<args[i].length();j++){
+                int n=Character.getNumericValue(args[i].charAt(j));
                 s+=p*n;
                 p++;
             }
