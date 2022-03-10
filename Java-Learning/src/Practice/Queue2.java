@@ -26,7 +26,7 @@ public class Queue2 {
     }
 
     public void enqueue(int data) {
-        Node newnode=new Node(data);
+        Node newnode = new Node(data);
         if (front == null || newnode.data < front.data) {
             newnode.next = front;
             front = newnode;
